@@ -23,23 +23,23 @@ Global Users → Route 53 DNS → CloudFront CDN → AWS WAF → ALB → Auto Sc
 
 
 ### Infrastructure Components
-- **🌐 VPC**: Custom multi-AZ network (10.0.0.0/16)
-- **🖥️ EC2**: Auto Scaling Group with Amazon Linux 2023, PHP 8.4.10
-- **🗄️ RDS**: MySQL 8.0.42 in private subnets with encryption
-- **⚖️ ALB**: Application Load Balancer with health checks
-- **🌍 CloudFront**: Global CDN with edge caching (E2CQUEUGP7QLMU)
-- **🛡️ WAF**: Web Application Firewall with 4 managed rule groups
-- **🌐 Route 53**: DNS management and domain routing
+- VPC: Custom multi-AZ network (10.0.0.0/16)
+- EC2: Auto Scaling Group with Amazon Linux 2023, PHP 8.4.10
+- RDS: MySQL 8.0.42 in private subnets with encryption
+- ALB: Application Load Balancer with health checks
+- CloudFront: Global CDN with edge caching (E2CQUEUGP7QLMU)
+- WAF: Web Application Firewall with 4 managed rule groups
+- Route 53: DNS management and domain routing
 
 ### Network Architecture
-- **Public Subnets**: 10.0.1.0/24, 10.0.2.0/24 (ALB tier)
-- **Private Subnets**: 10.0.3.0/24, 10.0.4.0/24 (App/DB tier)
-- **Availability Zones**: ap-southeast-1a, ap-southeast-1b
-- **Security Groups**: Defense-in-depth network security
+- Public Subnets: 10.0.1.0/24, 10.0.2.0/24 (ALB tier)
+- Private Subnets: 10.0.3.0/24, 10.0.4.0/24 (App/DB tier)
+- Availability Zones: ap-southeast-1a, ap-southeast-1b
+- Security Groups: Defense-in-depth network security
 
-## 📊 Performance Results
+## Performance Results
 
-### Global CDN Performance (WebPageTest - USA)
+## Global CDN Performance (WebPageTest - USA)
 | Metric | Result | Grade |
 |--------|--------|-------|
 | Time to First Byte | 0.000s | A+ |
@@ -58,7 +58,7 @@ Global Users → Route 53 DNS → CloudFront CDN → AWS WAF → ALB → Auto Sc
 | ALB | Data Processed | 39.4k bytes |
 | ALB | Peak LCU | 20 units |
 
-## 🛡️ Security Implementation
+## Security Implementation
 
 ### AWS WAF Analytics (Real Data)
 | Security Metric | Count | Percentage |
@@ -68,21 +68,21 @@ Global Users → Route 53 DNS → CloudFront CDN → AWS WAF → ALB → Auto Sc
 | Allowed Requests | 13 | 7.69% |
 | Captcha Challenges | 0 | 0% |
 
-### Security Features
-- **OWASP Top 10 Protection**: Core Rule Set implementation
-- **SQL Injection Prevention**: Advanced SQLi rule set
-- **Linux OS Protection**: OS-specific exploit prevention
-- **IP Reputation Filtering**: Malicious IP blocking
-- **Network Segmentation**: Private subnet isolation
-- **VPC Endpoints**: Secure management access
+## Security Features
+- OWASP Top 10 Protection: Core Rule Set implementation
+- SQL Injection Prevention: Advanced SQLi rule set
+- Linux OS Protection: OS-specific exploit prevention
+- IP Reputation Filtering: Malicious IP blocking
+- Network Segmentation: Private subnet isolation
+- VPC Endpoints: Secure management access
 
-### WAF Rule Groups
-1. **AWSManagedRulesCommonRuleSet** (700 capacity)
-2. **AWSManagedRulesSQLiRuleSet** (200 capacity)
-3. **AWSManagedRulesLinuxRuleSet** (200 capacity)
-4. **AWSManagedRulesAmazonIpReputationList** (25 capacity)
+## WAF Rule Groups
+1. AWSManagedRulesCommonRuleSet (700 capacity)
+2. AWSManagedRulesSQLiRuleSet (200 capacity)
+3. AWSManagedRulesLinuxRuleSet (200 capacity)
+4. AWSManagedRulesAmazonIpReputationList (25 capacity)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - AWS CLI configured with appropriate permissions
